@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<h1>Dictionary</h1><br>
+<input type="text" id="inputText">
+<input type="button" onclick="search()" value="Tra cứu">
+<p id="demo"></p>
+<script>
+    let tiengViet = ["chó", "mèo", "thỏ", "sư tử"]
+    let EngRip = ["dog", "cat", "rabbit", "lion"]
+    let result;
+
+    function search() {
+        let flag = false
+        let text = document.getElementById("inputText").value;
+        console.log(text)
+        for (let i = 0; i < EngRip.length; i++) {
+            if (text === EngRip[i]) {
+                result = tiengViet[i];
+                flag = true
+                break;
+            }
+
+        }
+        if (flag === true) {
+
+            document.getElementById("demo").innerHTML = result
+        } else {
+            document.getElementById("demo").innerHTML = " bạn đ biết j"
+        }
+
+    }
+
+</script>
+</body>
+</html>
